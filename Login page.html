@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      width: 350px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      font-size: 14px;
+      color: #555;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 16px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #4F46E5;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #3730a3;
+    }
+
+    .forgot {
+      text-align: right;
+      margin-top: -10px;
+      margin-bottom: 16px;
+    }
+
+    .forgot a {
+      font-size: 12px;
+      color: #4F46E5;
+      text-decoration: none;
+    }
+
+    .signup {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #666;
+    }
+
+    .signup a {
+      color: #4F46E5;
+      text-decoration: none;
+    }
+
+    #message {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h2>Login</h2>
+
+    <label>Email</label>
+    <input type="email" id="email" placeholder="Enter your email" />
+
+    <label>Password</label>
+    <input type="password" id="password" placeholder="Enter your password" />
+
+    <div class="forgot">
+      <a href="#">Forgot Password?</a>
+    </div>
+
+    <button onclick="login()">Login</button>
+
+    <p id="message"></p>
+
+    <div class="signup">
+      Don't have an account? <a href="#">Sign Up</a>
+    </div>
+  </div>
+
+  <script>
+    function login() {
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var msg = document.getElementById("message");
+
+      if (email == "" || password == "") {
+        msg.style.color = "red";
+        msg.textContent = "Please fill in all fields.";
+      } else {
+        msg.style.color = "green";
+        msg.textContent = "Login successful!";
+      }
+    }
+  </script>
+
+</body>
+</html>
